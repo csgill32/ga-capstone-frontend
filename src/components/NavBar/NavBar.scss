@@ -1,0 +1,35 @@
+$off-white: #FEFEFF;
+
+.side-bar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 15em;
+    background: $off-white;
+    text-align: center;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+        margin-top: 80px;
+    }
+
+    .logo{
+        font-size: 35px;
+        margin-top: 60px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        padding-left: 40px;
+        padding-bottom: 10px;
+        font-size: 15px;
+
+    }
+}
+
+
