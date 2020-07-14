@@ -1,5 +1,6 @@
 import React from "react";
 import RecipeModel from "../models/recipe";
+import Ingredients from '../components/Recipes/Ingredients';
 
 class RecipeShow extends React.Component {
     state = {
@@ -22,6 +23,12 @@ class RecipeShow extends React.Component {
         });
     };
 
+    // handleUpdate = recipe => {
+    //     const isUpdatedRecipe = r => {
+    //         return 
+    //     }
+    // }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
             this.fetchData();
@@ -29,13 +36,14 @@ class RecipeShow extends React.Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <>
                 {this.state.recipe ? (
                     <>
                         <h1>{this.state.recipe.name}</h1>
                         <p>Directions: {this.state.recipe.directions}</p>
-                        {/* <p>Ingredients: {this.state.recipe.ingredients}</p> */}
+                        {this.state.recipe && <Ingredients ingredients={this.state.recipe.ingredients} />}
                         <button onClick={this.handleDelete}>Delete</button>
                     </>
                 ) : (

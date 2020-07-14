@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+main {
+  padding-left: 16em;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: url(./images/kitchen-background.png) no-repeat center fixed;
@@ -11,6 +15,5 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin-left: 16em;
 
 }

@@ -5,23 +5,22 @@ import RecipeModel from '../models/recipe';
 class NewRecipe extends React.Component {
     state = {
         name: '',
-        description: '',
+        directions: '',
         ingredients: [],
-        created: false,
         error: ''
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
-        if (this.state.title !== "") {
+        if (this.state.name !== "") {
             RecipeModel.create(this.state).then((json) => {
                 console.log(json);
 
-                this.props.history.push(`/recipe/${json.recipe._id}`);
+                this.props.history.push(`/recipes/${json.recipe._id}`);
             });
         } else {
-            this.setState({ error: "Title is required." });
+            this.setState({ error: "Name is required." });
         }
     };
 

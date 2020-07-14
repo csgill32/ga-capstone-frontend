@@ -10,7 +10,7 @@ class RecipeModel {
     };
 
     static create = (recipeData) => {
-        return fetch(URL + '/new', {
+        return fetch(URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
