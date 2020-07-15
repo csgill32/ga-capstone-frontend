@@ -20,14 +20,14 @@ class RecipeModel {
         }).then((response) => response.json());
     };
 
-    static update = (recipeId) => {
-        return fetch(`${URL}/${recipeId}`, {
+    static update = ({ recipe, ...body }) => {
+        return fetch(`${URL}/${recipe}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
             credentials: "include",
-            body: JSON.stringify(recipeId),
+            body: JSON.stringify(body),
         })
     }
 

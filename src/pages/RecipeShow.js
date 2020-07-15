@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./RecipeShow.scss"
 import RecipeModel from "../models/recipe";
 import Ingredients from '../components/Recipes/Ingredients';
@@ -25,11 +26,11 @@ class RecipeShow extends React.Component {
         });
     };
 
-    // handleEdit = () => {
-    //     RecipeModel.update(this.state.recipe._id).then((json) => {
-    //         this.props.history.push(`/recipes/${json.recipe._id}`);
-    //     })
-    // }
+    handleEdit = () => {
+        RecipeModel.update(this.state.recipe._id).then((json) => {
+            this.props.history.push(`/recipes/${json.recipe._id}`);
+        })
+    }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -51,8 +52,9 @@ class RecipeShow extends React.Component {
                                         <button className="delete" onClick={this.handleDelete}>
                                             <FontAwesomeIcon className="icon" icon='trash-alt' />
                                         </button>
-
-                                        <FontAwesomeIcon className="icon" icon='edit' />
+                                        {/* <Link to={`/recipes/${recipe._id}/edit`}>
+                                            <FontAwesomeIcon className="icon" icon='edit' />
+                                        </Link> */}
                                     </div>
                                     <h1>{this.state.recipe.name}</h1>
                                 </header>

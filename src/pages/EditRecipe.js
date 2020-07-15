@@ -1,56 +1,35 @@
 import React from 'react';
-import "./NewRecipe.scss"
 import RecipeModel from '../models/recipe';
-import NewIngredientForm from '../components/Recipes/NewIngredientForm';
 
-class NewRecipe extends React.Component {
+class EditRecipe extends React.Component {
     state = {
-        name: '',
-        directions: '',
-        ingredients: [
-            {
-                name: '',
-                quantity: '',
-                measurement: '',
-            }
-        ],
-        error: ''
+        recipe: this.props.match.params.id
     }
 
-    handleSubmit = (event) => {
+    handleUpdate = (event) => {
         event.preventDefault();
-        console.log(this.state);
-        if (this.state.name !== "") {
-            RecipeModel.create(this.state).then((json) => {
-                console.log(json);
-
-                this.props.history.push(`/recipes/${json.recipe._id}`);
-            });
-        } else {
-            this.setState({ error: "Name is required." });
-        }
+        RecipeModel.update(this.state).then((json) => {
+            this.props.history.push(`/recipes/${this.state.recipe}`);
+        });
     };
 
     handleChange = (event) => {
+        console.log(this.props.match.params.id);
         this.setState({ [event.target.name]: event.target.value });
     };
-
-    updateIngredients = (ingredients) => {
-        this.setState({ ingredients })
-    }
 
     render() {
         return (
             <div className="form-wrapper">
                 <div className="form-container">
                     <header>
-                        <h1>Create New Recipe</h1>
+                        <h1>Edit Recipe</h1>
                     </header>
 
                     <div className='form'>
                         {this.state.error && <p>{this.state.error}</p>}
 
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleUpdate}>
                             <div className="split">
                                 <div className="new-recipe-form">
                                     <p>
@@ -71,11 +50,10 @@ class NewRecipe extends React.Component {
                                         />
                                     </p>
                                 </div>
-                                <NewIngredientForm updateIngredients={this.updateIngredients} />
 
                             </div>
                             <div className="submit-button">
-                                <input type='submit' value='Create New Recipe' />
+                                <input type='submit' value='Edit Recipe' />
                             </div>
 
                         </form>
@@ -87,4 +65,4 @@ class NewRecipe extends React.Component {
     }
 }
 
-export default NewRecipe;
+export default EditRecipe;
