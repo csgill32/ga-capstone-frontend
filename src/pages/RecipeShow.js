@@ -25,10 +25,10 @@ class RecipeShow extends React.Component {
         });
     };
 
-    // handleUpdate = recipe => {
-    //     const isUpdatedRecipe = r => {
-    //         return 
-    //     }
+    // handleEdit = () => {
+    //     RecipeModel.update(this.state.recipe._id).then((json) => {
+    //         this.props.history.push(`/recipes/${json.recipe._id}`);
+    //     })
     // }
 
     componentDidUpdate(prevProps, prevState) {

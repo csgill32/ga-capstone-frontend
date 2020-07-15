@@ -20,6 +20,17 @@ class RecipeModel {
         }).then((response) => response.json());
     };
 
+    static update = (recipeId) => {
+        return fetch(`${URL}/${recipeId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify(recipeId),
+        })
+    }
+
     static delete = (recipeId) => {
         return fetch(`${URL}/${recipeId}`, {
             method: "DELETE",
