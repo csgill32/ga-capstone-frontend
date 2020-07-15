@@ -10,7 +10,6 @@ const Ingredients = (props) => {
     }
 
     return <div className='ingredients-container'>
-        <h3>Ingredients</h3>
         {generateIngredients(props.data)}
     </div>;
 };

@@ -1,12 +1,18 @@
 import React from 'react';
-
+import "./NewRecipe.scss"
 import RecipeModel from '../models/recipe';
 
 class NewRecipe extends React.Component {
     state = {
         name: '',
         directions: '',
-        ingredients: [],
+        ingredients: [
+            {
+                name: '',
+                quantity: '',
+                measurement: '',
+            }
+        ],
         error: ''
     }
 
@@ -30,8 +36,9 @@ class NewRecipe extends React.Component {
 
     render() {
         return (
-            <div className='new-game-form'>
+            <div className='new-recipe-form'>
                 {this.state.error && <p>{this.state.error}</p>}
+                <h3>Recipe Information</h3>
                 <form onSubmit={this.handleSubmit}>
                     <p>
                         <input
@@ -43,8 +50,7 @@ class NewRecipe extends React.Component {
                         />
                     </p>
                     <p>
-                        <input
-                            type='text'
+                        <textarea
                             name='directions'
                             placeholder='directions'
                             value={this.state.directions}

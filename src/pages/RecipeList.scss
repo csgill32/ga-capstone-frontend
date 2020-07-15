@@ -1,0 +1,30 @@
+.list-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vh;
+    min-height: 100vh;
+    // border: 2px solid black;
+}
+
+.list-container {
+    height: 75vh;
+    width: 90vh;
+    background-color: #EAEBEF;
+    opacity: .8;
+    // border: 2px solid black;
+    padding: 40px;
+    line-height: 30px;;
+    text-align: center;
+
+    h1 {
+        font-weight: normal;
+        margin-bottom: 40px;
+    }
+
+    .list {
+        column-count: 3;
+    }
+
+}
+

@@ -1,6 +1,8 @@
 import React from "react";
+import "./RecipeShow.scss"
 import RecipeModel from "../models/recipe";
 import Ingredients from '../components/Recipes/Ingredients';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class RecipeShow extends React.Component {
     state = {
@@ -41,10 +43,36 @@ class RecipeShow extends React.Component {
             <>
                 {this.state.recipe ? (
                     <>
-                        <h1>{this.state.recipe.name}</h1>
-                        <p>Directions: {this.state.recipe.directions}</p>
-                        {this.state.recipe && <Ingredients ingredients={this.state.recipe.ingredients} />}
-                        <button onClick={this.handleDelete}>Delete</button>
+                        <div className="wrapper">
+                            <div className="card-container">
+
+                                <header>
+                                    <div className="delete-edit">
+                                        <button className="delete" onClick={this.handleDelete}>
+                                            <FontAwesomeIcon className="icon" icon='trash-alt' />
+                                        </button>
+
+                                        <FontAwesomeIcon className="icon" icon='edit' />
+                                    </div>
+                                    <h1>{this.state.recipe.name}</h1>
+                                </header>
+
+                                <div className="split">
+                                    <section className="ingredients">
+                                        <h3>ingredients</h3>
+                                        <br />
+                                        {this.state.recipe && <Ingredients ingredients={this.state.recipe.ingredients} />}
+                                    </section>
+                                    <section className="directions">
+                                        <h3>directions</h3>
+                                        <br />
+                                        {this.state.recipe.directions}
+                                    </section>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </>
                 ) : (
                         <h1>Loading...</h1>

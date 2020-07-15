@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./RecipeList.scss";
 import RecipeModel from "../models/recipe";
 import Recipes from "../components/Recipes/Recipes";
 
@@ -19,7 +19,17 @@ class RecipeList extends React.Component {
     };
 
     render() {
-        return <Recipes data={this.state.recipes} />;
+        return (
+            <div className="list-wrapper">
+                <div className="list-container">
+                    <h1>my recipes</h1>
+                    <div className="list">
+                        <Recipes data={this.state.recipes} />
+                    </div>
+                </div>
+            </div>
+
+        )
     }
 }
 

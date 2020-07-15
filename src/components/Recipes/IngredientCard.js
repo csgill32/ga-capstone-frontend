@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const IngredientCard = (props) => {
     const { name, quantity, measurement } = props.ingredient;
