@@ -4,6 +4,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
     fab,
@@ -11,4 +12,5 @@ library.add(
     far,
     faTrashAlt,
     faEdit,
+    faPlus,
 );

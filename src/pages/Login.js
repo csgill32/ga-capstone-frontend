@@ -71,8 +71,6 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
-                {/* TODO: FIGURE OUT LOGOUT ON NAVBAR */}
-                <button onClick={this.handleLogout}>Logout</button>
             </div>
         )
     }

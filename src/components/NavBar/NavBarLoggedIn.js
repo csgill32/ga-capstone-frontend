@@ -16,7 +16,7 @@ const NavBarLoggedIn = (props) => {
         <div className="side-bar">
             <header className="header">
                 <h1 className="logo">
-                    <a href="/">RECIPE BOOK</a>
+                    RECIPE BOOK
                 </h1>
 
                 <nav>
@@ -28,10 +28,7 @@ const NavBarLoggedIn = (props) => {
                             <NavLink to='/recipes/new'>create recipe</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/logout'>logout</NavLink>
-                        </li>
-                        <li>
-                            <button onClick={handleLogout}>Logout</button>
+                            <button onClick={handleLogout}>logout</button>
                         </li>
                     </ul>
                 </nav>

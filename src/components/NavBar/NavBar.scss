@@ -10,7 +10,13 @@ $off-white: #FEFEFF;
     a {
         color: black;
         text-decoration: none;
+        font-size: 18px;
     }
+
+    a:hover {
+        color: #91B5BD;
+        text-decoration: underline;
+        }
 
     li {
         list-style: none;
@@ -21,6 +27,21 @@ $off-white: #FEFEFF;
         font-size: 35px;
         margin-top: 60px;
     }
+
+    button {
+        background: none;
+        border: none;
+        font-family: inherit;
+        text-decoration: none;
+        font-size: 18px;
+        }
+    
+    button:hover {
+        color: #91B5BD;
+        text-decoration: underline;
+        cursor: pointer;
+        }
+    
 
     footer {
         position: absolute;

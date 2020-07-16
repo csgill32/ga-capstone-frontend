@@ -8,7 +8,7 @@ class NavBarLoggedOut extends React.Component {
             <div className="side-bar">
                 <header className="header">
                     <h1 className="logo">
-                        <a href="/">RECIPE BOOK</a>
+                        RECIPE BOOK
                     </h1>
 
                     <nav>
