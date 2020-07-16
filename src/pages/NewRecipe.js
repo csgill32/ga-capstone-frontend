@@ -77,7 +77,7 @@ class NewRecipe extends React.Component {
 
                             </div>
                             <div className="submit-button">
-                                <button onClick={this.handleSubmit}>Create</button>
+                                <button onClick={this.handleSubmit}>create</button>
                             </div>
 
                         </form>

@@ -21,7 +21,8 @@ class RecipeModel {
     };
 
     static update = ({ recipe, ...body }) => {
-        return fetch(`${URL}/${recipe}`, {
+        console.log(recipe, body)
+        return fetch(`${URL}/${recipe._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

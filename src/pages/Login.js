@@ -32,6 +32,7 @@ class Login extends React.Component {
     handleLogout = () => {
         UserModel.logout(this.state).then((json) => {
             console.log(this.state);
+            this.props.setLogin(false);
             this.props.history.push("/login");
         });
     };
@@ -70,7 +71,7 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
-                {/* TODO: FIGURE OUT LOGOT ON NAVBAR */}
+                {/* TODO: FIGURE OUT LOGOUT ON NAVBAR */}
                 <button onClick={this.handleLogout}>Logout</button>
             </div>
         )

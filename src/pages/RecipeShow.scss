@@ -10,7 +10,7 @@ $off-white: #FEFEFF;
 
 .card-container {
     height: 75vh;
-    width: 90vh;
+    width: 100vh;
     background-color: $off-white;
     opacity: .9;
     padding-top: 10px;
@@ -47,7 +47,7 @@ $off-white: #FEFEFF;
 
     section{
         display: inline-block;
-        padding-left: 40px;
+        // padding-left: 40px;
         
     }
 
@@ -55,7 +55,7 @@ $off-white: #FEFEFF;
         display: flex;
         // border: 2px solid black;
         justify-content: space-evenly;
-        margin-top: 40px;
+        margin-top: -10px;
         height: 60vh;
     }
 
@@ -66,15 +66,21 @@ $off-white: #FEFEFF;
     }
 
     .ingredients {
-        // border: 2px solid black;
-        width: 40%;
-        padding-right: 25px;
+        // border: 2px solid red;
+        height: 60vh;
+        width: 35vh;
+        padding: 10px;
+        overflow-y: auto;
     }
 
     .directions {
         border-left: 1px solid black;
-        width: 60%;
-        padding-right: 25px;
+        // border: 1px solid blue;
+        height: 60vh;
+        width: 55vh;
+        padding-left: 40px;
+        padding-right: 10px;
+        overflow-y: auto;
     }
 
 

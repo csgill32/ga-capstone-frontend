@@ -26,6 +26,8 @@ $off-white: #FEFEFF;
 
     .list {
         column-count: 3;
+        height: 60vh;
+        overflow-y: auto;
     }
 
 }

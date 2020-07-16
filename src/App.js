@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavBar isLoggedIn={this.state.isLoggedIn} />
+        <NavBar setLogin={this.setLogin} isLoggedIn={this.state.isLoggedIn} />
         <main>
           <Routes setLogin={this.setLogin} />
         </main>

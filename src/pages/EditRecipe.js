@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeModel from '../models/recipe';
 import EditIngredientForm from '../components/Recipes/EditIngredientForm';
+import './EditRecipe.scss';
 
 class EditRecipe extends React.Component {
     state = {
@@ -13,7 +14,7 @@ class EditRecipe extends React.Component {
     handleUpdate = (event) => {
         event.preventDefault();
         RecipeModel.update(this.state).then((json) => {
-            this.props.history.push(`/recipes/${this.state.recipe.id}`);
+            this.props.history.push(`/recipes/${this.props.match.params.id}`);
         });
     };
 
@@ -52,7 +53,7 @@ class EditRecipe extends React.Component {
 
                                     <form onSubmit={this.handleUpdate}>
                                         <div className="split">
-                                            <div className="new-recipe-form">
+                                            <div className="edit-recipe-form">
                                                 <p>
                                                     <input
                                                         type='text'
@@ -68,13 +69,15 @@ class EditRecipe extends React.Component {
                                                         placeholder='directions'
                                                         value={this.state.directions}
                                                         onChange={this.handleChange}
+                                                        rows="22"
+                                                        cols="45"
                                                     />
                                                 </p>
                                             </div>
                                             <EditIngredientForm ingredients={this.state.ingredients} updateIngredients={this.updateIngredients} />
                                         </div>
                                         <div className="submit-button">
-                                            <input type='submit' value='Edit Recipe' />
+                                            <button onClick={this.handleUpdate}>edit</button>
                                         </div>
 
                                     </form>
