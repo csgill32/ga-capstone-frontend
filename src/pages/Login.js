@@ -8,7 +8,6 @@ class Login extends React.Component {
         email: '',
         password: '',
         error: '',
-        loggedIn: false,
     }
 
     handleChange = (event) => {
@@ -20,7 +19,8 @@ class Login extends React.Component {
         if (this.state.email !== "") {
             UserModel.login(this.state).then((json) => {
                 console.log(json);
-                this.setState({ loggedIn: true });
+                this.props.setLogin(true);
+                localStorage.setItem('uid', json.foundUser._id);
                 console.log(this.state);
                 this.props.history.push(`/recipes`);
             });

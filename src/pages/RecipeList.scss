@@ -1,3 +1,5 @@
+$off-white: #FEFEFF;
+
 .list-wrapper {
     display: flex;
     align-items: center;
@@ -10,8 +12,8 @@
 .list-container {
     height: 75vh;
     width: 90vh;
-    background-color: #EAEBEF;
-    opacity: .85;
+    background-color: $off-white;
+    opacity: .9;
     // border: 2px solid black;
     padding: 30px;
     line-height: 30px;;

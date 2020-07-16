@@ -14,12 +14,11 @@ function Routes(props) {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/register' component={Register} />
-            <Route path='/login' component={Login} />
+            <Route path='/login' render={(routerProps) => <Login {...props} {...routerProps} />} />
             <Route path='/recipes/new' component={NewRecipe} />
             <Route path='/recipes/:id/edit' component={EditRecipe} />
             <Route path='/recipes/:id' component={RecipeShow} />
             <Route path='/recipes' component={RecipeList} />
-
 
         </Switch>
     );

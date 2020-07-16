@@ -1,3 +1,5 @@
+$off-white: #FEFEFF;
+
 .form-wrapper {
     display: flex;
     justify-content: center;
@@ -7,17 +9,16 @@
 }
 
 .form-container {
-    // display: flex;
-    // justify-content: space-evenly;
-    // align-items: center;
     height: 75vh;
     width: 100vh;
-    background-color: #EAEBEF;
-    opacity: .85;
+    background-color: $off-white;
+    opacity: .9;
     // border-radius: 3%;
+    // border: 2px solid blue;
 
     header{
         margin-top: 30px;
+        // border: 2px solid green;
     }
 
     h1 {
@@ -31,11 +32,44 @@
     // margin-top: 30px;
     height: 58vh;
     position: relative;
+    margin-top: -20px;
+
+    input {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding: 5px;
+        font-size: 17px;
+        background-color: #EBF1FD;
+        border: 1px solid #9BB5D4;
+        font-family: inherit;
+    }
+
+    textarea {
+        background-color: #EBF1FD;
+        border: 1px solid #9BB5D4;
+        padding: 5px;
+        font-family: inherit;
+    }
+
+    button {
+        background: none;
+        border: none;
+        font-family: inherit;
+        text-decoration: underline;
+    }
+
+    button:hover {
+        color: #91B5BD;
+    }
+
+    ::placeholder{
+        font-size: 17px;
+    }
 
 }
 
 .split {
-    // border: 2px solid blue;
+    // border: 2px solid yellow;
     display: flex;
     justify-content: space-around;
     // height: 40vh;
@@ -43,22 +77,7 @@
 
 .new-recipe-form {
     // border: 2px solid green;
-    input {
-        font-size: 20px;
-    }
-
-    textarea {
-        font-size: 16px;
-    }
-
-    p {
-        margin-bottom: 15px;
-    }
-
-    input[type="text"]{
-        margin-left: 80px;
-    }
-
+    margin-left: 15px;
 }
 
 .new-ingredient-form {
@@ -79,17 +98,25 @@
         background: none;
         border: none;
         font-family: inherit;
-        text-decoration: none;
+        text-decoration: underline;
         font-size: 20px;
     }
 
     button:hover {
         color: #91B5BD;
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 
 .ingredient-input {
+    input {
+        font-size: 16px;
+    }
+
+    ::placeholder{
+        font-size: 16px;
+    }
+
     button {
         background: none;
         border: none;

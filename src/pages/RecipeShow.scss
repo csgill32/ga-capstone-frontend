@@ -1,3 +1,5 @@
+$off-white: #FEFEFF;
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -9,8 +11,8 @@
 .card-container {
     height: 75vh;
     width: 90vh;
-    background-color: #EAEBEF;
-    opacity: .85;
+    background-color: $off-white;
+    opacity: .9;
     padding-top: 10px;
     // border: 2px solid black;
 
@@ -19,6 +21,7 @@
 
         button {
             border: none;
+            background: none;
         }
 
         .delete-edit {

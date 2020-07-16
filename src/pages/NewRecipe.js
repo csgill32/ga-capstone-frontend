@@ -68,8 +68,8 @@ class NewRecipe extends React.Component {
                                             placeholder='directions'
                                             value={this.state.directions}
                                             onChange={this.handleChange}
-                                            rows="18"
-                                            cols="36"
+                                            rows="22"
+                                            cols="45"
                                         />
                                     </p>
                                 </div>

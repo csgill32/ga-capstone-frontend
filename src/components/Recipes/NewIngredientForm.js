@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function NewIngredientForm(props) {
+const NewIngredientForm = (props) => {
     const [inputList, setInputList] = useState([{ name: "", quantity: "", measurement: "" }]);
 
     const handleInputChange = (event, index) => {
@@ -36,7 +36,7 @@ function NewIngredientForm(props) {
                             placeholder='ingredient name'
                             value={ingredients.name}
                             onChange={event => handleInputChange(event, i)}
-                            size="15"
+                            size="16"
                         />
 
 
@@ -45,7 +45,7 @@ function NewIngredientForm(props) {
                             placeholder='quantity'
                             value={ingredients.quantity}
                             onChange={event => handleInputChange(event, i)}
-                            size="10"
+                            size="8"
                         />
 
 
@@ -54,7 +54,7 @@ function NewIngredientForm(props) {
                             placeholder='measurement'
                             value={ingredients.measurement}
                             onChange={event => handleInputChange(event, i)}
-                            size="12"
+                            size="13"
                         />
 
                         {inputList.length !== 1 && <button onClick={() => handleRemoveClick(i)}>-</button>}

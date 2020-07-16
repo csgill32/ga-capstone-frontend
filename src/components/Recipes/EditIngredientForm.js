@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function EditIngredientForm(props) {
-    const [inputList, setInputList] = useState([{ name: "", quantity: "", measurement: "" }]);
+    const [inputList, setInputList] = useState(props.ingredients);
 
     const handleInputChange = (event, index) => {
         const { name, value } = event.target;
@@ -56,8 +56,8 @@ function EditIngredientForm(props) {
                         </p>
                         <div className="addIngredient">
                             {inputList.length !== 1 && <button
-                                onClick={() => handleRemoveClick(i)}>Remove</button>}
-                            {inputList.length - 1 === i && <button onClick={handleAddClick}>Add Ingredient</button>}
+                                onClick={() => handleRemoveClick(i)}>-</button>}
+                            {inputList.length - 1 === i && <button onClick={handleAddClick}>+</button>}
                         </div>
                     </div>
                 )
