@@ -1,12 +1,14 @@
 import React from 'react';
 import UserModel from '../models/user'
+import './Login.scss';
 
 class Login extends React.Component {
 
     state = {
         email: '',
         password: '',
-        error: ''
+        error: '',
+        loggedIn: false,
     }
 
     handleChange = (event) => {
@@ -15,10 +17,11 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         if (this.state.email !== "") {
             UserModel.login(this.state).then((json) => {
                 console.log(json);
+                this.setState({ loggedIn: true });
+                console.log(this.state);
                 this.props.history.push(`/recipes`);
             });
         } else {
@@ -26,31 +29,49 @@ class Login extends React.Component {
         }
     };
 
+    handleLogout = () => {
+        UserModel.logout(this.state).then((json) => {
+            console.log(this.state);
+            this.props.history.push("/login");
+        });
+    };
+
     render() {
         return (
-            <div className="login-form">
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.handleSubmit}>
-                    <p>
-                        <input
-                            type='text'
-                            name='email'
-                            placeholder='email'
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <p>
-                        <input
-                            type='password'
-                            name='password'
-                            placeholder='password'
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <input type='submit' value='Login' />
-                </form>
+            <div className="auth-wrapper">
+                <div className="auth-container">
+                    <header>
+                        <h3>welcome back!</h3>
+                    </header>
+                    <div className="auth-form">
+                        {this.state.error && <p>{this.state.error}</p>}
+                        <form onSubmit={this.handleSubmit}>
+                            <h4>email</h4>
+                            <p>
+                                <input
+                                    type='text'
+                                    name='email'
+                                    placeholder='email'
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                            <h4>password</h4>
+                            <p>
+                                <input
+                                    type='password'
+                                    name='password'
+                                    placeholder='password'
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                            <button type='submit'>Login</button>
+                        </form>
+                    </div>
+                </div>
+                {/* TODO: FIGURE OUT LOGOT ON NAVBAR */}
+                <button onClick={this.handleLogout}>Logout</button>
             </div>
         )
     }

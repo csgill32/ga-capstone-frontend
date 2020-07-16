@@ -1,7 +1,6 @@
 import React from 'react';
 
 import UserModel from '../models/user'
-// import axios from 'axios';
 
 class Register extends React.Component {
 
@@ -30,29 +29,38 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div className="register-form">
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.handleSubmit}>
-                    <p>
-                        <input
-                            type='text'
-                            name='email'
-                            placeholder='email'
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <p>
-                        <input
-                            type='password'
-                            name='password'
-                            placeholder='password'
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <input type='submit' value='Register' />
-                </form>
+            <div className="auth-wrapper">
+                <div className="auth-container">
+                    <header>
+                        <h3>register today!</h3>
+                    </header>
+                    <div className="auth-form">
+                        {this.state.error && <p>{this.state.error}</p>}
+                        <form onSubmit={this.handleSubmit}>
+                            <h4>email</h4>
+                            <p>
+                                <input
+                                    type='text'
+                                    name='email'
+                                    placeholder='email'
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                            <h4>password</h4>
+                            <p>
+                                <input
+                                    type='password'
+                                    name='password'
+                                    placeholder='password'
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </p>
+                            <button type='submit'>Register</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     }

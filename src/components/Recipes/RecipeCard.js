@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./RecipeCard.scss";
 
 const RecipeCard = (props) => {
     const { name, _id } = props.recipe;

@@ -68,6 +68,8 @@ class NewRecipe extends React.Component {
                                             placeholder='directions'
                                             value={this.state.directions}
                                             onChange={this.handleChange}
+                                            rows="18"
+                                            cols="36"
                                         />
                                     </p>
                                 </div>
@@ -75,7 +77,7 @@ class NewRecipe extends React.Component {
 
                             </div>
                             <div className="submit-button">
-                                <input type='submit' value='Create New Recipe' />
+                                <button onClick={this.handleSubmit}>Create</button>
                             </div>
 
                         </form>

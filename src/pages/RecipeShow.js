@@ -20,11 +20,17 @@ class RecipeShow extends React.Component {
         });
     };
 
-    handleDelete = () => {
+    handleDeleteRecipe = () => {
         RecipeModel.delete(this.state.recipe._id).then((json) => {
             this.props.history.push("/recipes");
         });
     };
+
+    // handleDeleteIngredient = () => {
+    //     RecipeModel.delete(this.state.recipe.ingredient.id).then((json) => {
+    //         this.props.history.push(`/recipes/${json.recipe._id}`)
+    //     });
+    // }
 
     handleEdit = () => {
         RecipeModel.update(this.state.recipe._id).then((json) => {
@@ -49,12 +55,12 @@ class RecipeShow extends React.Component {
 
                                 <header>
                                     <div className="delete-edit">
-                                        <button className="delete" onClick={this.handleDelete}>
+                                        <button className="delete" onClick={this.handleDeleteRecipe}>
                                             <FontAwesomeIcon className="icon" icon='trash-alt' />
                                         </button>
-                                        {/* <Link to={`/recipes/${recipe._id}/edit`}>
+                                        <Link className="edit-icon" to={`/recipes/${this.state.recipe._id}/edit`}>
                                             <FontAwesomeIcon className="icon" icon='edit' />
-                                        </Link> */}
+                                        </Link>
                                     </div>
                                     <h1>{this.state.recipe.name}</h1>
                                 </header>

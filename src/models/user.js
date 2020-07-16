@@ -30,9 +30,14 @@ class UserModel {
         }).then((response) => response.json());
     };
 
-    static delete = (userId) => {
-        return fetch(`${URL}/${userId}`, {
+    static logout = (userData) => {
+        return fetch(URL + "/logout", {
             method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify(userData),
         }).then((response) => response.json());
     };
 }

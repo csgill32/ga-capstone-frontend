@@ -30,36 +30,36 @@ function NewIngredientForm(props) {
             {inputList.map((ingredients, i) => {
                 return (
                     <div className="ingredient-input">
-                        <p>
-                            <input type="text"
-                                name='name'
-                                placeholder='ingredient name'
-                                value={ingredients.name}
-                                onChange={event => handleInputChange(event, i)}
-                            />
-                        </p>
-                        <p>
-                            <input type="text"
-                                name='quantity'
-                                placeholder='quantity'
-                                value={ingredients.quantity}
-                                onChange={event => handleInputChange(event, i)}
-                            />
-                        </p>
-                        <p>
-                            <input type="text"
-                                name='measurement'
-                                placeholder='measurement'
-                                value={ingredients.measurement}
-                                onChange={event => handleInputChange(event, i)}
-                            />
-                        </p>
-                        <div className="btn-box">
-                            {inputList.length !== 1 && <button
-                                className="addIngredient"
-                                onClick={() => handleRemoveClick(i)}>Remove</button>}
-                            {inputList.length - 1 === i && <button onClick={handleAddClick}>Add Ingredient</button>}
-                        </div>
+
+                        <input type="text"
+                            name='name'
+                            placeholder='ingredient name'
+                            value={ingredients.name}
+                            onChange={event => handleInputChange(event, i)}
+                            size="15"
+                        />
+
+
+                        <input type="text"
+                            name='quantity'
+                            placeholder='quantity'
+                            value={ingredients.quantity}
+                            onChange={event => handleInputChange(event, i)}
+                            size="10"
+                        />
+
+
+                        <input type="text"
+                            name='measurement'
+                            placeholder='measurement'
+                            value={ingredients.measurement}
+                            onChange={event => handleInputChange(event, i)}
+                            size="12"
+                        />
+
+                        {inputList.length !== 1 && <button onClick={() => handleRemoveClick(i)}>-</button>}
+                        {inputList.length - 1 === i && <button onClick={handleAddClick}>+</button>}
+
                     </div>
                 )
 
