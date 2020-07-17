@@ -20,7 +20,7 @@ class Register extends React.Component {
         if (this.state.email !== "") {
             UserModel.create(this.state).then((json) => {
                 console.log(json);
-                // this.props.history.push(`/login`);
+                this.props.history.push(`/login`);
             });
         } else {
             this.setState({ error: "Email is required." });

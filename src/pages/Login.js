@@ -43,6 +43,8 @@ class Login extends React.Component {
                 <div className="auth-container">
                     <header>
                         <h3>welcome back!</h3>
+                        <br />
+                        <h4>please log in to your account</h4>
                     </header>
                     <div className="auth-form">
                         {this.state.error && <p>{this.state.error}</p>}
