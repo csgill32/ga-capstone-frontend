@@ -68,3 +68,5 @@ function EditIngredientForm(props) {
 }
 
 export default EditIngredientForm
+
+// source: https://www.cluemediator.com/add-or-remove-input-fields-dynamically-with-reactjs

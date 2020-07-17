@@ -26,12 +26,6 @@ class RecipeShow extends React.Component {
         });
     };
 
-    // handleDeleteIngredient = () => {
-    //     RecipeModel.delete(this.state.recipe.ingredient.id).then((json) => {
-    //         this.props.history.push(`/recipes/${json.recipe._id}`)
-    //     });
-    // }
-
     handleEdit = () => {
         RecipeModel.update(this.state.recipe._id).then((json) => {
             this.props.history.push(`/recipes/${json.recipe._id}`);

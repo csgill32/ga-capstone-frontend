@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import UserModel from '../models/user'
 
 class Register extends React.Component {
@@ -57,8 +57,12 @@ class Register extends React.Component {
                                     onChange={this.handleChange}
                                 />
                             </p>
+                            <br />
                             <button type='submit'>Register</button>
                         </form>
+                        <br />
+                        <br />
+                        <Link to="/login">already have an account? log in here!</Link>
                     </div>
                 </div>
             </div>

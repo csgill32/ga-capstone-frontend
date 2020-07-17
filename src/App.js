@@ -10,7 +10,10 @@ class App extends React.Component {
   }
 
   setLogin = (bool) => {
-    this.setState({ isLoggedIn: bool });
+    if (!bool) {
+      localStorage.removeItem('uid');
+    }
+    this.setState({ isLoggedIn: bool })
   }
 
   render() {

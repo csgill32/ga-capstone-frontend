@@ -14,7 +14,7 @@ class NavBarLoggedOut extends React.Component {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink to='/register'>register</NavLink>
+                                <NavLink to='/'>register</NavLink>
                             </li>
                             <li>
                                 <NavLink to='/login'>log in</NavLink>

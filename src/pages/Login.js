@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UserModel from '../models/user'
 import './Login.scss';
 
@@ -69,8 +70,12 @@ class Login extends React.Component {
                                     onChange={this.handleChange}
                                 />
                             </p>
+                            <br />
                             <button type='submit'>Login</button>
                         </form>
+                        <br />
+                        <br />
+                        <Link to="/">new to our site? register here!</Link>
                     </div>
                 </div>
             </div>

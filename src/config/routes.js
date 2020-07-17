@@ -12,9 +12,9 @@ import Login from '../pages/Login'
 function Routes(props) {
     return (
         <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/register' component={Register} />
-            <Route path='/login' render={(routerProps) => <Login {...props} {...routerProps} />} />
+            <Route exact path='/' component={Register} />
+            {/* <Route path='/register' component={Register} /> */}
+            <Route exact path='/login' render={(routerProps) => <Login {...props} {...routerProps} />} />
             <Route path='/recipes/new' component={NewRecipe} />
             <Route path='/recipes/:id/edit' component={EditRecipe} />
             <Route path='/recipes/:id' component={RecipeShow} />
