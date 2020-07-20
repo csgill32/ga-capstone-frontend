@@ -1,4 +1,4 @@
-const URL = `http://localhost:3001/api/v1/auth`;
+const URL = `https://recipebookcapstone-backend.herokuapp.com/api/v1/auth`;
 
 class UserModel {
     static all = () => {
