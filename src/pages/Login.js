@@ -19,10 +19,8 @@ class Login extends React.Component {
         event.preventDefault();
         if (this.state.email !== "") {
             UserModel.login(this.state).then((json) => {
-                console.log(json);
                 this.props.setLogin(true);
                 localStorage.setItem('uid', json.foundUser._id);
-                console.log(this.state);
                 this.props.history.push(`/recipes`);
             });
         } else {
@@ -32,7 +30,6 @@ class Login extends React.Component {
 
     handleLogout = () => {
         UserModel.logout(this.state).then((json) => {
-            console.log(this.state);
             this.props.setLogin(false);
             this.props.history.push("/login");
         });

@@ -16,7 +16,6 @@ class Register extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         if (this.state.email !== "") {
             UserModel.create(this.state).then((json) => {
                 console.log(json);
